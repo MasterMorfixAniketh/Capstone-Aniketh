@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swasthyam</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <style>
+    h1, h2, h3 {
+      color: #FFA500; 
+      font-family: 'Roboto', sans-serif; 
+    }
+    .profile-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    .profile-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    .profile-container h2 {
+      text-align: center;
+      color: #FFA500;
+    }
+    .profile-container label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .profile-container input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #333;
+      color: #E0E0E0;
+      font-family: 'Roboto', sans-serif;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: #FF8C00;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .btn-signin {
+      background-color: #FFA500;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      text-decoration: none;
+      margin-right: 10px;
+      position: absolute;
+      top: 10px;
+      right: 60px;
+    }
+    .btn-signin:hover {
+      background-color: #FF8C00;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 data-aos="fade-down">Swasthyam</h1>
+      <nav>
+        <ul>
+          <li><a href="#home" data-aos="fade-down" data-aos-delay="100">Home</a></li>
+          <li><a href="#features" data-aos="fade-down" data-aos-delay="200">Features</a></li>
+          <li><a href="healthstats.html" data-aos="fade-down" data-aos-delay="250">Health Stats</a></li>
+          <li><a href="goals.html" data-aos="fade-down" data-aos-delay="300">Goals</a></li>
+          <li><a href="#notifications" data-aos="fade-down" data-aos-delay="350">Notifications</a></li>
+          <li><a href="#ai-assistant" data-aos="fade-down" data-aos-delay="400">AI Assistant</a></li>
+          <li><a href="#contact" data-aos="fade-down" data-aos-delay="500">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="signin.html" class="btn-signin">Sign In</a>
+      <a href="profile.html"><img src="/Users/aniketh/Desktop/Capstone/User Profile.png" alt="Profile" class="profile-icon"></a>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>Track Your Health with Ease </h1>
+      <h3>See What Swasthyam can do!</h3>
+      <button class="btn" data-aos="fade-up">Explore</button>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="container">
+      <h2 data-aos="fade-right">Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="/Users/aniketh/Desktop/Capstone/Steps.png" alt="Steps" class="feature-icon">
+          <h3>Steps</h3>
+          <p>Keep track of your daily steps and achieve your goals.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="200" onclick="openModal('hydrationModal')">
+          <img src="/Users/aniketh/Desktop/Capstone/Water.png" alt="Water Intake" class="feature-icon">
+          <h3>Hydration</h3>
+          <p>Monitor your water intake for a healthier lifestyle.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <img src="/Users/aniketh/Desktop/Capstone/Sleep.png" alt="Sleep Patterns" class="feature-icon">
+          <h3>Sleep Patterns</h3>
+          <p>Analyze your sleep for better rest and recovery.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="400" onclick="openModal('bloodSugarModal')">
+          <img src="/Users/aniketh/Desktop/Capstone/Blood Sugar.png" alt="Blood Sugar" class="feature-icon">
+          <h3>Blood Sugar</h3>
+          <p>Stay informed about your blood sugar levels.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+          <img src="/Users/aniketh/Desktop/Capstone/Heart Rate.png" alt="Heart Rate" class="feature-icon">
+          <h3>Heart Rate</h3>
+          <p>Monitor your heart rate for optimal health.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
+          <img src="/Users/aniketh/Desktop/Capstone/Calorie counter.png" alt="Calorie Counter" class="feature-icon">
+          <h3>Calorie Counter</h3>
+          <p>Track your calorie intake to manage your diet.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="700" onclick="openModal('bmiModal')">
+          <img src="/Users/aniketh/Desktop/Capstone/BMI.png" alt="BMI" class="feature-icon">
+          <h3>BMI</h3>
+          <p>Calculate your Body Mass Index for a healthy weight.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="800" onclick="openModal('menstrualCycleModal')">
+          <img src="/Users/aniketh/Desktop/Capstone/Menstrual Cycle.png" alt="Menstrual Cycle" class="feature-icon">
+          <h3>Menstrual Cycle</h3>
+          <p>Track your menstrual cycle for better health management.</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="900" onclick="openModal('bloodPressureModal')">
+          <img src="/Users/aniketh/Desktop/Capstone/Blood Pressure.png" alt="Blood Pressure" class="feature-icon">
+          <h3>Blood Pressure</h3>
+          <p>Monitor your blood pressure for a healthier heart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notifications" class="section bg-light">
+    <div class="container">
+      <h2 data-aos="fade-left">Notifications</h2>
+      <ul data-aos="fade-up" data-aos-delay="100">
+        <li>Time to take your medication</li>
+        <li>You've reached your step goal!</li>
+        <li>Drink more water to stay hydrated</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ai-assistant" class="section bg-light separate-section">
+    <div class="container">
+      <h2 data-aos="zoom-in">AI Assistant</h2>
+      <p data-aos="fade-up">Get assistance anytime. Ask questions or request tips.</p>
+      <textarea id="chat-input" placeholder="Type your message here..." data-aos="fade-up"></textarea>
+      <button onclick="sendMessage()" class="btn" data-aos="fade-up">Send</button>
+    </div>
+  </section>
+
+      <div id="bloodSugarModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('bloodSugarModal')">&times;</span>
+          <h2>Blood Sugar Input</h2>
+          <form>
+            <div class="form-group">
+              <label for="blood-sugar-level">Blood Sugar Level:</label>
+              <input type="number" id="blood-sugar-level" name="blood-sugar-level" required>
+            </div>
+            <div class="form-group">
+              <label for="measurement-time">Measurement Time:</label>
+              <input type="datetime-local" id="measurement-time" name="measurement-time" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="bmiModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('bmiModal')">&times;</span>
+          <h2>BMI Input</h2>
+          <form>
+            <div class="form-group">
+              <label for="weight">Weight (kg):</label>
+              <input type="number" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+              <label for="height">Height (cm):</label>
+              <input type="number" id="height" name="height" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="menstrualCycleModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('menstrualCycleModal')">&times;</span>
+          <h2>Menstrual Cycle Input</h2>
+          <form>
+            <div class="form-group">
+              <label for="last-period-date">Last Period Date:</label>
+              <input type="date" id="last-period-date" name="last-period-date" required>
+            </div>
+            <div class="form-group">
+              <label for="cycle-length">Cycle Length (days):</label>
+              <input type="number" id="cycle-length" name="cycle-length" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="hydrationModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('hydrationModal')">&times;</span>
+          <h2>Hydration Input</h2>
+          <form>
+            <div class="form-group">
+              <label for="water-intake">Water Intake (ml):</label>
+              <input type="number" id="water-intake" name="water-intake" required>
+            </div>
+            <div class="form-group">
+              <label for="intake-time">Intake Time:</label>
+              <input type="datetime-local" id="intake-time" name="intake-time" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="bloodPressureModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('bloodPressureModal')">&times;</span>
+          <h2>Blood Pressure Input</h2>
+          <form>
+            <div class="form-group">
+              <label for="systolic">Systolic (mm Hg):</label>
+              <input type="number" id="systolic" name="systolic (Heart Beat)" required>
+            </div>
+            <div class="form-group">
+              <label for="diastolic">Diastolic (mm Hg):</label>
+              <input type="number" id="diastolic" name="diastolic (Heart Rest)" required>
+            </div>
+            <div class="form-group">
+              <label for="measurement-time">Measurement Time:</label>
+              <input type="datetime-local" id="measurement-time" name="measurement-time" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modals = ['bloodSugarModal', 'bmiModal', 'menstrualCycleModal', 'hydrationModal', 'bloodPressureModal'];
+      modals.forEach(modalId => {
+        if (event.target == document.getElementById(modalId)) {
+          closeModal(modalId);
+        }
+      });
+    }
+  </script>
+
+  <section id="faqs" class="section">
+    <div class="container">
+      <h2 data-aos="fade-right">FAQ's</h2>
+      <div class="faq" data-aos="fade-up" data-aos-delay="100">
+        <h3>How do I track my steps?</h3>
+        <p>Our app automatically tracks your steps using the built-in sensors on your device. Just keep your phone with you while walking.</p>
+      </div>
+      <div class="faq" data-aos="fade-up" data-aos-delay="200">
+        <h3>How can I monitor my hydration levels?</h3>
+        <p>You can log your water intake manually in the app, and it will remind you to drink water at regular intervals.</p>
+      </div>
+      <div class="faq" data-aos="fade-up" data-aos-delay="300">
+        <h3>Can I track my sleep patterns?</h3>
+        <p>Yes, our app can track your sleep patterns if you wear a compatible device while sleeping.</p>
+      </div>
+      <div class="faq" data-aos="fade-up" data-aos-delay="400">
+        <h3>How do I measure my heart rate?</h3>
+        <p>You can measure your heart rate using a compatible heart rate monitor or a smartwatch that syncs with our app.</p>
+      </div>
+      <div class="faq" data-aos="fade-up" data-aos-delay="500">
+        <h3>Is my data secure?</h3>
+        <p>Yes, we take your privacy seriously and use advanced encryption methods to ensure your data is secure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <h2 data-aos="fade-right">Contact</h2>
+      <p data-aos="fade-up">Connect with expert doctors:</p>
+      <ul data-aos="fade-up" data-aos-delay="100">
+        <li>Dr. A:  - <a href="tel:+123456789">+123456789</a></li>
+        <li>Dr. B:  - <a href="tel:+987654321">+987654321</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p data-aos="fade-up">&copy; 2025 Swasthyam. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init(); 
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

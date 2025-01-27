@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swasthyam - Goals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1E1E1E;
+            color: #E0E0E0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .content {
+            width: 100%;
+            max-width: 1200px;
+        }
+        .header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .header h2 {
+            color: #FFA500;
+        }
+        .goal-stats {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .goal-stats h4 {
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .stats-summary p {
+            color: #E0E0E0;
+            margin-bottom: 5px;
+        }
+        .goal-item {
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .goal-item h4 {
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+        .goal-progress {
+            margin: 10px 0;
+            position: relative;
+            background: #444;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(to right, #1abc9c, #16a085);
+            transition: width 0.4s ease;
+        }
+        .goal-details {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+        .priority {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .priority.high {
+            color: #e74c3c;
+        }
+        .priority.medium {
+            color: #f39c12;
+        }
+        .priority.low {
+            color: #27ae60;
+        }
+        .goal-category .category-tag {
+            background-color: #7f8c8d;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .goal-milestones ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .goal-milestones li {
+            color: #E0E0E0;
+        }
+        .add-goal {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .add-goal:hover {
+            background: #FF8C00;
+        }
+        .input-group {
+            margin-top: 10px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #E0E0E0;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #444;
+            color: #E0E0E0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">
+        <img src="/Users/aniketh/Desktop/Capstone/Backbutton.png" alt="Back to Home">
+    </button>
+    <div class="content">
+        <header class="header">
+            <h2>Set Your Health Goals</h2>
+            <p>Track, manage, and accomplish your health objectives.</p>
+        </header>
+
+        <section class="goals">
+            <div class="goal-stats">
+                <h4>Goal Completion Overview</h4>
+                <div class="stats-summary">
+                    <p><strong>Total Goals:</strong> 8</p>
+                    <p><strong>Completed:</strong> 5</p>
+                    <p><strong>In Progress:</strong> 3</p>
+                </div>
+            </div>
+
+            <div class="goal-item">
+                <h4>Walk 10,000 steps daily</h4>
+                <div class="goal-progress">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <div class="goal-details">
+                    <span class="priority high">Priority: High</span>
+                    <span class="due-date">Due: <strong>Dec 5, 2024</strong></span>
+                </div>
+                <div class="goal-category">
+                    <span class="category-tag">Personal</span>
+                </div>
+                <div class="goal-milestones">
+                    <ul>
+                        <li><strong>Milestone 1:</strong> Walk 5,000 steps</li>
+                        <li><strong>Milestone 2:</strong> Walk 7,500 steps</li>
+                        <li><strong>Milestone 3:</strong> Walk 10,000 steps</li>
+                    </ul>
+                </div>
+                <div class="input-group">
+                    <label for="steps-goal">Set Daily Steps Goal:</label>
+                    <input type="number" id="steps-goal" name="steps-goal" placeholder="Enter steps goal">
+                </div>
+            </div>
+
+            <div class="goal-item">
+                <h4>Burn 500 Kcal daily</h4>
+                <div class="goal-progress">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <div class="goal-details">
+                    <span class="priority medium">Priority: Medium</span>
+                    <span class="due-date">Due: <strong>Dec 10, 2024</strong></span>
+                </div>
+                <div class="goal-category">
+                    <span class="category-tag">Health</span>
+                </div>
+                <div class="goal-milestones">
+                    <ul>
+                        <li><strong>Milestone 1:</strong> Burn 250 Kcal</li>
+                        <li><strong>Milestone 2:</strong> Burn 400 Kcal</li>
+                        <li><strong>Milestone 3:</strong> Burn 500 Kcal</li>
+                    </ul>
+                </div>
+                <div class="input-group">
+                    <label for="burn-goal">Set Daily Calories Burn Goal:</label>
+                    <input type="number" id="burn-goal" name="burn-goal" placeholder="Enter calories burn goal">
+                </div>
+            </div>
+
+            <div class="goal-item">
+                <h4>Sleep for 8 hours each night</h4>
+                <div class="goal-progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <div class="goal-details">
+                    <span class="priority low">Priority: Low</span>
+                    <span class="due-date">Due: <strong>Dec 20, 2024</strong></span>
+                </div>
+                <div class="goal-category">
+                    <span class="category-tag">Health</span>
+                </div>
+                <div class="goal-milestones">
+                    <ul>
+                        <li><strong>Milestone 1:</strong> Sleep 6 hours</li>
+                        <li><strong>Milestone 2:</strong> Sleep 7 hours</li>
+                        <li><strong>Milestone 3:</strong> Sleep 8 hours</li>
+                    </ul>
+                </div>
+                <div class="input-group">
+                    <label for="sleep-goal">Set Daily Sleep Hours Goal:</label>
+                    <input type="number" id="sleep-goal" name="sleep-goal" placeholder="Enter sleep hours goal">
+                </div>
+            </div>
+
+            <div class="goal-item">
+                <h4>Calorie Intake</h4>
+                <div class="goal-progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="goal-details">
+                    <span class="priority medium">Priority: Medium</span>
+                    <span class="due-date">Due: <strong>Dec 15, 2024</strong></span>
+                </div>
+                <div class="goal-category">
+                    <span class="category-tag">Diet</span>
+                </div>
+                <div class="goal-milestones">
+                    <ul>
+                        <li><strong>Milestone 1:</strong> Intake 1500 Kcal</li>
+                        <li><strong>Milestone 2:</strong> Intake 1800 Kcal</li>
+                        <li><strong>Milestone 3:</strong> Intake 2000 Kcal</li>
+                    </ul>
+                </div>
+                <div class="input-group">
+                    <label for="intake-goal">Set Daily Calorie Intake Goal:</label>
+                    <input type="number" id="intake-goal" name="intake-goal" placeholder="Enter calorie intake goal">
+                </div>
+            </div>
+
+            <button class="add-goal">+ Add New Goal</button>
+        </section>
+    </div>
+</body>
+</html>

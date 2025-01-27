@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swasthyam - Health Stats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1E1E1E;
+            color: #E0E0E0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .content {
+            width: 100%;
+            max-width: 1200px;
+        }
+        .header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .header h2 {
+            color: #FFA500;
+        }
+        .charts {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .chart {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 48%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .chart h3 {
+            color: #FFA500;
+            margin-bottom: 20px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">
+        <img src="/Users/aniketh/Desktop/Capstone/Backbutton.png" alt="Back to Home">
+    </button>
+    <div class="content">
+        <header class="header">
+            <h2>Health Stats</h2>
+            <p>Analyze your health data and track progress.</p>
+        </header>
+
+        <section class="charts">
+            <div class="chart">
+                <h3>Weekly Steps Count</h3>
+                <canvas id="weeklyStepsChart"></canvas>
+            </div>
+            <div class="chart">
+                <h3>Calorie Breakdown</h3>
+                <canvas id="calorieBreakdownChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx1 = document.getElementById('weeklyStepsChart').getContext('2d');
+        const weeklyStepsChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Steps Count',
+                    data: [8000, 10000, 7500, 12500, 11000, 14000, 12000],
+                    backgroundColor: 'rgba(255, 165, 0, 0.2)',
+                    borderColor: '#FFA500',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('calorieBreakdownChart').getContext('2d');
+        const calorieBreakdownChart = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['Carbs', 'Proteins', 'Fats'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['#ffcc00', '#ff5722', '#03a9f4']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
